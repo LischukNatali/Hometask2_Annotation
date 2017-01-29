@@ -26,6 +26,9 @@ public class Human {
         this.birthDate = birthDate;
     }
 
+    public Human() {
+    }
+
     @Override
     public String toString() {
         return "Human{" +

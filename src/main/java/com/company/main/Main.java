@@ -1,7 +1,5 @@
 package com.company.main;
 
-import com.google.gson.Gson;
-
 import java.time.LocalDate;
 
 public class Main {
@@ -12,8 +10,10 @@ public class Main {
         ConvertToJson convertToJson = new ConvertToJson();
         convertToJson.toJson(human);
         ConvertFromJson convertFromJson = new ConvertFromJson();
-        Gson gson = new Gson();
-        String a = gson.toJson(human);
-        convertFromJson.fromJson(a, Human.class);
+        String fromJson = "{\"firstName\":\"fName\",\"lastName\":\"lName\",\"hobby\":\"hb\", \"birthDate\":\"19911011\"}";
+        Human human2 = new Human();
+        convertFromJson.fromJson(fromJson, human.getClass());
+        System.out.println(human.toString());
+
     }
 }
